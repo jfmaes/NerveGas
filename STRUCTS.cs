@@ -26,7 +26,7 @@ namespace NerveGas
             [MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
             public byte[] d;
         }
-
+  
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         public struct EVENT_DATA_DESCRIPTOR
@@ -44,6 +44,19 @@ namespace NerveGas
             public ushort reserved2;
         }
         */
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        public struct EVENT_DESCRIPTOR
+        {
+            public ushort id;
+            public byte version;
+            public byte channel;
+            public byte level;
+            public byte opcode;
+            public ushort task;
+            public long keyword;
+
+        }
 
         public enum NtStatus : uint
         {
